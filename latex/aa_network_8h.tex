@@ -1,0 +1,67 @@
+\hypertarget{aa_network_8h}{}\doxysection{lib/aa\+Network-\/main/src/aa\+Network.h File Reference}
+\label{aa_network_8h}\index{lib/aaNetwork-\/main/src/aaNetwork.h@{lib/aaNetwork-\/main/src/aaNetwork.h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$aa\+Format.\+h$>$}\newline
+{\ttfamily \#include $<$known\+\_\+networks.\+h$>$}\newline
+{\ttfamily \#include $<$ESP32\+Ping.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classaa_network}{aa\+Network}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cc}{signal\+Strength}} \{ \newline
+\mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca0c36ce0989c710199cce7407f3a554f0}{amazing}} = -\/30
+, \mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca4dd22dd59a87807427e6637dcb8c7c7c}{very\+Good}} = -\/67
+, \mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca00feb703766dcf7d822a0ee5f2079cfb}{okay}} = -\/70
+, \mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccadb5a77058f7ea70c057f6b502825d848}{not\+Good}} = -\/80
+, \newline
+\mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccaf565a3dd43b707e28ed128a9d42aef3d}{unusable}} = -\/90
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{aa_network_8h_a6f72b2ecad89ff5a2bdd23757a3e8685}\label{aa_network_8h_a6f72b2ecad89ff5a2bdd23757a3e8685}} 
+\mbox{\hyperlink{classaa_network}{aa\+Network}} {\bfseries wifi}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ \hypertarget{aa_network_8h_autotoc_md103}{}\doxysubsection{@defgroup global\+Variables Class global variables.}\label{aa_network_8h_autotoc_md103}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cc}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cc}} 
+\index{aaNetwork.h@{aaNetwork.h}!signalStrength@{signalStrength}}
+\index{signalStrength@{signalStrength}!aaNetwork.h@{aaNetwork.h}}
+\doxysubsubsection{\texorpdfstring{signalStrength}{signalStrength}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cc}{signal\+Strength}}}
+
+Valid values for wifi signal strength. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{amazing@{amazing}!aaNetwork.h@{aaNetwork.h}}\index{aaNetwork.h@{aaNetwork.h}!amazing@{amazing}}}\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca0c36ce0989c710199cce7407f3a554f0}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca0c36ce0989c710199cce7407f3a554f0}} 
+amazing&-\/30 db or more is the best signal strength. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{veryGood@{veryGood}!aaNetwork.h@{aaNetwork.h}}\index{aaNetwork.h@{aaNetwork.h}!veryGood@{veryGood}}}\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca4dd22dd59a87807427e6637dcb8c7c7c}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca4dd22dd59a87807427e6637dcb8c7c7c}} 
+very\+Good&-\/67 db or more is a good signal strength. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{okay@{okay}!aaNetwork.h@{aaNetwork.h}}\index{aaNetwork.h@{aaNetwork.h}!okay@{okay}}}\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca00feb703766dcf7d822a0ee5f2079cfb}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74cca00feb703766dcf7d822a0ee5f2079cfb}} 
+okay&-\/70 db is a workable signal strength. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{notGood@{notGood}!aaNetwork.h@{aaNetwork.h}}\index{aaNetwork.h@{aaNetwork.h}!notGood@{notGood}}}\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccadb5a77058f7ea70c057f6b502825d848}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccadb5a77058f7ea70c057f6b502825d848}} 
+not\+Good&-\/80 db may start to have connection issues. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unusable@{unusable}!aaNetwork.h@{aaNetwork.h}}\index{aaNetwork.h@{aaNetwork.h}!unusable@{unusable}}}\mbox{\Hypertarget{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccaf565a3dd43b707e28ed128a9d42aef3d}\label{aa_network_8h_a480211344cd5a14a61f361e2ff6c74ccaf565a3dd43b707e28ed128a9d42aef3d}} 
+unusable&-\/90 db or less will make the connection unsuable. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}

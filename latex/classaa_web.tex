@@ -1,0 +1,103 @@
+\hypertarget{classaa_web}{}\doxysection{aa\+Web Class Reference}
+\label{classaa_web}\index{aaWeb@{aaWeb}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaa_web_ac6da7035daeff62751dccb204ff139d0}{aa\+Web}} ()
+\item 
+\mbox{\Hypertarget{classaa_web_a317102db44e37fe5592d92cecde6c727}\label{classaa_web_a317102db44e37fe5592d92cecde6c727}} 
+{\bfseries aa\+Web} (const char $\ast$var1)
+\item 
+\mbox{\hyperlink{classaa_web_acdb7e128f73c7a38612b0df92891502f}{$\sim$aa\+Web}} ()
+\item 
+bool \mbox{\hyperlink{classaa_web_a1b5bd749989d4d7e8c8253c6ca369b68}{start}} (char $\ast$unique\+Name\+Ptr)
+\begin{DoxyCompactList}\small\item\em Start web server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classaa_web_a6a8606cc01e5192d06162c58e151287c}{check\+For\+Client\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Check for web client requests. \end{DoxyCompactList}\item 
+IPAddress \mbox{\hyperlink{classaa_web_a2fc201ba7ce8a9058b63af6d9bb68787}{get\+Broker\+IP}} ()
+\begin{DoxyCompactList}\small\item\em Get new broker IP address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classaa_web_a685829c727c34585e4752796ad4fda6d}{new\+Mqtt\+Broker\+Ip}} (const char $\ast$address)
+\begin{DoxyCompactList}\small\item\em Handle new IP address for broker from web. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaa_web_ac6da7035daeff62751dccb204ff139d0}\label{classaa_web_ac6da7035daeff62751dccb204ff139d0}} 
+\index{aaWeb@{aaWeb}!aaWeb@{aaWeb}}
+\index{aaWeb@{aaWeb}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{aaWeb()}{aaWeb()}}
+{\footnotesize\ttfamily aa\+Web\+::aa\+Web (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classaa_web_autotoc_md123}{}\doxysubsection{@class Set MQTT broker IP and do OTA firmware updates.}\label{classaa_web_autotoc_md123}
+\mbox{\Hypertarget{classaa_web_acdb7e128f73c7a38612b0df92891502f}\label{classaa_web_acdb7e128f73c7a38612b0df92891502f}} 
+\index{aaWeb@{aaWeb}!````~aaWeb@{$\sim$aaWeb}}
+\index{````~aaWeb@{$\sim$aaWeb}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{$\sim$aaWeb()}{~aaWeb()}}
+{\footnotesize\ttfamily aa\+Web\+::$\sim$aa\+Web (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classaa_web_autotoc_md125}{}\doxysubsection{@brief This is the destructor for this class.}\label{classaa_web_autotoc_md125}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classaa_web_a6a8606cc01e5192d06162c58e151287c}\label{classaa_web_a6a8606cc01e5192d06162c58e151287c}} 
+\index{aaWeb@{aaWeb}!checkForClientRequest@{checkForClientRequest}}
+\index{checkForClientRequest@{checkForClientRequest}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{checkForClientRequest()}{checkForClientRequest()}}
+{\footnotesize\ttfamily bool aa\+Web\+::check\+For\+Client\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check for web client requests. 
+
+\hypertarget{classaa_web_autotoc_md127}{}\doxysubsection{@return bool true if there is a request waiting, false if there is not.}\label{classaa_web_autotoc_md127}
+\mbox{\Hypertarget{classaa_web_a2fc201ba7ce8a9058b63af6d9bb68787}\label{classaa_web_a2fc201ba7ce8a9058b63af6d9bb68787}} 
+\index{aaWeb@{aaWeb}!getBrokerIP@{getBrokerIP}}
+\index{getBrokerIP@{getBrokerIP}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{getBrokerIP()}{getBrokerIP()}}
+{\footnotesize\ttfamily IPAddress aa\+Web\+::get\+Broker\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get new broker IP address. 
+
+\hypertarget{classaa_web_autotoc_md129}{}\doxysubsection{@return IPAddress Returns the current IPAddress setting for the MQTT broker.}\label{classaa_web_autotoc_md129}
+\mbox{\Hypertarget{classaa_web_a685829c727c34585e4752796ad4fda6d}\label{classaa_web_a685829c727c34585e4752796ad4fda6d}} 
+\index{aaWeb@{aaWeb}!newMqttBrokerIp@{newMqttBrokerIp}}
+\index{newMqttBrokerIp@{newMqttBrokerIp}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{newMqttBrokerIp()}{newMqttBrokerIp()}}
+{\footnotesize\ttfamily bool aa\+Web\+::new\+Mqtt\+Broker\+Ip (\begin{DoxyParamCaption}\item[{const char $\ast$}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle new IP address for broker from web. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & IP address of the MQTT broker. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classaa_web_autotoc_md128}{}\doxysubsection{@return bool true if the name is set successfully, false if it fails.}\label{classaa_web_autotoc_md128}
+\mbox{\Hypertarget{classaa_web_a1b5bd749989d4d7e8c8253c6ca369b68}\label{classaa_web_a1b5bd749989d4d7e8c8253c6ca369b68}} 
+\index{aaWeb@{aaWeb}!start@{start}}
+\index{start@{start}!aaWeb@{aaWeb}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool aa\+Web\+::start (\begin{DoxyParamCaption}\item[{char $\ast$}]{unique\+Name\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Start web server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & The unique name that this MCU will be known as on the network. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classaa_web_autotoc_md126}{}\doxysubsection{@return bool true if the web service starts successfully, false if it fails.}\label{classaa_web_autotoc_md126}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/aa\+Web.\+h\item 
+src/aa\+Web.\+cpp\end{DoxyCompactItemize}
