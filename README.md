@@ -21,10 +21,8 @@ This repository contains an Arduino class that provides the MCU with a web inter
 ## Dependencies
 This class depends on the following libraries being present on your system:
 
-* <a href="https://github.com/espressif/arduino-esp32">
-Arduino.h</a> This is the Arduino core library
+* <a href="https://github.com/espressif/arduino-esp32">Arduino.h</a> This is the Arduino core library
 that comes bundled with PlatformIO.
-
 * Update.h. This comes with the Arduino core library.
 * WiFiClient.h. Required for hosting a web server. This comes with the Arduino core library.
 * WebServer.h. Required for hosting a web server. This comes with the Arduino core library.
