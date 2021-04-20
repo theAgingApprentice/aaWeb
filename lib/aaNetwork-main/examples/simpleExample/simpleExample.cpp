@@ -39,16 +39,12 @@
  * IN THE SOFTWARE.  
  *****************************************************************************/ 
 #include <Arduino.h> // Arduino Core for ESP32. Comes with Platform.io.
-#include <aaWeb.h> // Store values that persist past reboot.
-#include <aaNetwork.h> // Wifi functions. 
+#include <aaNetwork.h> // Store values that persist past reboot.
 
 /**
  * Define global objects.
  * =================================================================================*/
-aaWeb myWebServer; // Explain what this object reference is for. 
-aaNetwork network(HOST_NAME_PREFIX); // WiFi session management.
-const char* WEB_APP_TITLE = "Example"; // App name for web page titles.
-aaWeb localWebService(WEB_APP_TITLE); // Webserver hosted by microcontroller.
+aaNetwork wifi("EXAMPLE"); // Explain what this object reference is for. 
 
 /**
  * @brief Initialize the serial output with the specified baud rate measured in bits 
@@ -62,54 +58,24 @@ void setupSerial()
 } //setupSerial()
 
 /** 
- * @brief Start up the web server.
- * @details Web server supports configuring the MQTT broker IP without needing to 
- *          rebuild. It also provides a web interface for doing OTA code downloads.
- * =================================================================================*/
-void startWebServer()
-{
-   char uniqueName[HOST_NAME_SIZE]; // Contain unique name for Wifi network purposes. 
-   char *uniqueNamePtr = &uniqueName[0]; // Pointer to starting address of name. 
-   network.getUniqueName(uniqueNamePtr); // Get unique name. 
-   Serial.print("<startWebServer> Unique Name: "); Serial.println(uniqueName);
-   Serial.print("<startWebServer> Name length: "); Serial.println(strlen(uniqueName));
-   isWebServer = localWebService.start(uniqueNamePtr); // Start web server and track result.
-   if(isWebServer)
-   {
-      Serial.println("<startWebServer> Web server successfully started.");
-   } //if
-   else
-   {
-      Serial.println("<startWebServer> Web server failed to start.");
-   } //else
-} //startWebServer()
-
-/**
- * @brief Monitor local web service to see if there are any client requests.
- * @details Call to checkForClientRequest() does two things. First, it causes the 
- * localWebServer service to process any new binay downloads. Second, it returns a 
- * boolean, that when TRUE, indicates there is a new IP address for the MQTT broker 
- * that needs to be saved to NV RAM.
- * =================================================================================*/
-void monitorWebServer()
-{
-   if(localWebService.checkForClientRequest()) // New binary or broker IP?
-   {
-      IPAddress tmpIP = localWebService.getBrokerIP(); // Get awaiting IP address.
-      Serial.print("<monitorWebServer> Set broker IP to "); Serial.println(tmpIP);
-      flash.writeBrokerIP(tmpIP); // Write address to flash.
-   } //if
-} //monitorWebServer()
-
-/** 
  * @brief Arduino mandatory function #1. Runs once at boot. 
  * =================================================================================*/
 void setup()
 {
-   // Declare variables.
+   char uniqueName[HOST_NAME_SIZE]; // Character array that holds unique name. 
+   char *uniqueNamePtr = uniqueName; // Pointer to unique name character array.
    setupSerial(); // Set serial baud rate. 
    Serial.println("<setup> Start of setup");
-   // Call stuff here.
+   wifi.connect(); // Connect to a known WiFi network.
+   wifi.getUniqueName(uniqueNamePtr);
+   Serial.print("<setup> Unique name = ");
+   Serial.println(uniqueName);
+
+   long tmp =  wifi.rfSignalStrength(1);
+   Serial.print("<setup> Signal strength in db = ");
+   Serial.println(tmp);
+
+   wifi.cfgToConsole(); // Dump network info to console.
    Serial.println("<setup> End of setup");
 } // setup()
 

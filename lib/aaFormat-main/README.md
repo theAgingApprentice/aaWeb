@@ -1,7 +1,7 @@
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
 [![Doxygen Action](https://github.com/theAgingApprentice/aaChip/actions/workflows/main.yml/badge.svg?event=push)](https://github.com/theAgingApprentice/aaChip/actions/workflows/main.yml)
 
-# Web interface class 
+# Format and convert data type class  
 
 ## Table of contents
 * [Overview](#Overview)
@@ -16,22 +16,13 @@
 * [Acknowledgements](#Acknowledgements)
 
 ## Overview
-This repository contains an Arduino class that provides the MCU with a web interface used to both set the MQTT broker IP address as well as do OTA firmware updates. This is part of a series of classes made to support a standard set of APIs for experimental robot platforms. 
+
+This repository contains an Arduino class that converts and formats data. This is part of a series of classes made to support a standard set of APIs for experimental robot platforms. 
 
 ## Dependencies
-This class depends on the following libraries being present on your system:
-
-* <a href="https://github.com/espressif/arduino-esp32">
-Arduino.h</a> This is the Arduino core library
+This class depends on <a href="https://github.com/espressif/arduino-esp32">
+Arduino.h</a> being present on your system. This is the Arduino core library
 that comes bundled with PlatformIO.
-
-* Update.h. This comes with the Arduino core library.
-* WiFiClient.h. Required for hosting a web server. This comes with the Arduino core library.
-* WebServer.h. Required for hosting a web server. This comes with the Arduino core library.
-* ESPmDNS.h. Required for hosting a web server. This comes with the Arduino core library.
-* <a href="https://github.com/marian-craciunescu/ESP32Ping">ESP32Ping.h</a> Used to verify IP addresses, specificlly the MQTT broker IP address. 
-* <a href="https://github.com/theAgingApprentice/aaFormat">aaFormat.h</a> Required for converting and formatting data types. 
-* <a href="https://github.com/theAgingApprentice/aaNetwork">aaNetwork.h</a> Required for Wifi connection. 
 
 ## Author
 Written by Old Squire for the Aging Apprentice.
@@ -59,7 +50,7 @@ time the **main** branch gets updated. The output from Doxygen is placed in the
 [Github Pages](https://pages.github.com/) site that contains all of the Doxygen
 tags and assorted embedded comments from the code itself. This documentation 
 can be viewed in your web browser 
-[here](https://theagingapprentice.github.io/aaWeb/html/index.html).    
+[here](https://theagingapprentice.github.io/aaFormat/html/index.html).    
 
 ## Microprocessor compatibility
 This library has only been tested on the [Adafruit Huzzah32](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather) development board containing the [Espressif ESP WROOM32 SOC](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf) featuring a pair of [Cadence/Xtensa®32-bit LX6 microprocessors](https://mirrobo.ru/wp-content/uploads/2016/11/Cadence_Tensillica_Xtensa_LX6_ds.pdf). 
@@ -69,7 +60,7 @@ These instructions assume that you have [Git](https://git-scm.com/) installed on
 your computer.
 
 1. Navigate to the Arduino project directory on your computer.
-2. Issue the command `git clone https://github.com/theAgingApprentice/aaWeb.git}`.
+2. Issue the command `git clone https://github.com/theAgingApprentice/{projectName.git}`.
 3. Issue the command `git remote`. If you get back the response *origin* then 
 you are all set. If you get a blank response back then you must set up an 
 association to the remote repository by issuing the command `git remote add 
@@ -119,10 +110,10 @@ use TravisCI.
 
 ## Releases
 * We use the [SemVer](http://semver.org/) numbering scheme for our releases. 
-* The latest stable release is [v1.0.0](https://github.com/theAgingApprentice/aaWeb/releases/tag/v1.0.0).
+* The latest stable release is [v1.0.0](https://github.com/theAgingApprentice/aaFormat/releases/tag/v1.0.0).  
 
 ## Examples
-There is an [example sketch](https://github.com/theAgingApprentice/aaWeb/blob/main/examples/simpleExample/simpleExample.cpp) that shows you how to use this class. 
+There is an [example sketch](https://github.com/theAgingApprentice/aaFormat/blob/main/examples/simpleExample/simpleExample.cpp) that shows you how to use this class. 
 
 ## Acknowledgements
 * The many folks involved in porting the Arduino libraries over to the ESP32 SOC.
