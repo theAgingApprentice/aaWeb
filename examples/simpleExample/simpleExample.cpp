@@ -46,9 +46,12 @@
  * Define global objects.
  * =================================================================================*/
 aaWeb myWebServer; // Explain what this object reference is for. 
-aaNetwork network(HOST_NAME_PREFIX); // WiFi session management.
+const char* HOST_NAME_PREFIX = "Example"; // Prefix for our unique network name.
 const char* WEB_APP_TITLE = "Example"; // App name for web page titles.
+aaNetwork network(HOST_NAME_PREFIX); // WiFi session management.
 aaWeb localWebService(WEB_APP_TITLE); // Webserver hosted by microcontroller.
+char uniqueName[HOST_NAME_SIZE]; // Contain unique name for Wifi network purposes. 
+char *uniqueNamePtr = &uniqueName[0]; // Pointer to starting address of name. 
 
 /**
  * @brief Initialize the serial output with the specified baud rate measured in bits 
@@ -68,12 +71,10 @@ void setupSerial()
  * =================================================================================*/
 void startWebServer()
 {
-   char uniqueName[HOST_NAME_SIZE]; // Contain unique name for Wifi network purposes. 
-   char *uniqueNamePtr = &uniqueName[0]; // Pointer to starting address of name. 
-   network.getUniqueName(uniqueNamePtr); // Get unique name. 
+   network.getUniqueName(uniqueNamePtr); // Place unique name in char array. 
    Serial.print("<startWebServer> Unique Name: "); Serial.println(uniqueName);
    Serial.print("<startWebServer> Name length: "); Serial.println(strlen(uniqueName));
-   isWebServer = localWebService.start(uniqueNamePtr); // Start web server and track result.
+   bool isWebServer = localWebService.start(uniqueNamePtr); // Start web server and track result.
    if(isWebServer)
    {
       Serial.println("<startWebServer> Web server successfully started.");
@@ -97,7 +98,7 @@ void monitorWebServer()
    {
       IPAddress tmpIP = localWebService.getBrokerIP(); // Get awaiting IP address.
       Serial.print("<monitorWebServer> Set broker IP to "); Serial.println(tmpIP);
-      flash.writeBrokerIP(tmpIP); // Write address to flash.
+//      flash.writeBrokerIP(tmpIP); // Write address to flash.
    } //if
 } //monitorWebServer()
 
@@ -106,11 +107,19 @@ void monitorWebServer()
  * =================================================================================*/
 void setup()
 {
-   // Declare variables.
    setupSerial(); // Set serial baud rate. 
    Serial.println("<setup> Start of setup");
-   // Call stuff here.
-   Serial.println("<setup> End of setup");
+   setupSerial(); // Set serial baud rate. 
+   Serial.println("<setup> Start of setup");
+   network.connect(); // Start WiFi connection.
+   startWebServer(); // Start up web server.
+   network.cfgToConsole();
+   Serial.println("<setup> Instructions");
+   Serial.println("<setup> ------------");
+   Serial.println("<setup> 1. Type the IP address for this MCU into your web browser.");
+   Serial.println("<setup> 2. Choose either to et a new MQTT broker IP or do an OTA update.");
+   Serial.println("<setup> For an OTA update grab the file .pio/build/feather32/firmware.bin");
+   Serial.println("<setup> For the MQTT IP update note that nothing actually happens other than a message appears in the console.");
 } // setup()
 
 /**
@@ -118,5 +127,8 @@ void setup()
  * =================================================================================*/
 void loop()
 {
-
+   if(network.areWeConnected()) // Is there is a valid WiFi connection?
+   {
+      monitorWebServer(); // Handle any pending web client requests. 
+   } //if   
 } //loop()
