@@ -1,7 +1,7 @@
-\label{index_md_lib_aaNetwork_main_lib_aaFormat_main_README}%
-\Hypertarget{index_md_lib_aaNetwork_main_lib_aaFormat_main_README}%
- \href{https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE}{\texttt{ }} \href{https://github.com/theAgingApprentice/aaChip/actions/workflows/main.yml}{\texttt{ }}\hypertarget{index_autotoc_md17}{}\doxysection{Format and convert data type class}\label{index_autotoc_md17}
-\hypertarget{index_autotoc_md18}{}\doxysubsection{Table of contents}\label{index_autotoc_md18}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ \href{https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE}{\texttt{ }} \href{https://github.com/theAgingApprentice/aaChip/actions/workflows/main.yml}{\texttt{ }}\hypertarget{index_autotoc_md6}{}\doxysection{Web interface class}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{Table of contents}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
 \item \href{\#Overview}{\texttt{ Overview}}
@@ -14,28 +14,39 @@
 \item \href{\#Running-tests}{\texttt{ Running tests}}
 \item \href{\#Releases}{\texttt{ Releases}}
 \item \href{\#Acknowledgements}{\texttt{ Acknowledgements}}
-\end{DoxyItemize}\hypertarget{index_autotoc_md19}{}\doxysubsection{Overview}\label{index_autotoc_md19}
-This repository contains an Arduino class that converts and formats data. This is part of a series of classes made to support a standard set of APIs for experimental robot platforms.\hypertarget{index_autotoc_md20}{}\doxysubsection{Dependencies}\label{index_autotoc_md20}
-This class depends on \href{https://github.com/espressif/arduino-esp32}{\texttt{ Arduino.\+h}} being present on your system. This is the Arduino core library that comes bundled with Platform\+IO.\hypertarget{index_autotoc_md21}{}\doxysubsection{Author}\label{index_autotoc_md21}
-Written by Old Squire for the Aging Apprentice.\hypertarget{index_autotoc_md22}{}\doxysubsection{Development environment}\label{index_autotoc_md22}
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Overview}\label{index_autotoc_md8}
+This repository contains an Arduino class that provides the MCU with a web interface used to both set the MQTT broker IP address as well as do OTA firmware updates. This is part of a series of classes made to support a standard set of APIs for experimental robot platforms.\hypertarget{index_autotoc_md9}{}\doxysubsection{Dependencies}\label{index_autotoc_md9}
+This class depends on the following libraries being present on your system\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/espressif/arduino-esp32}{\texttt{ Arduino.\+h}} This is the Arduino core library that comes bundled with Platform\+IO.
+\item Update.\+h. This comes with the Arduino core library.
+\item Wi\+Fi\+Client.\+h. Required for hosting a web server. This comes with the Arduino core library.
+\item Web\+Server.\+h. Required for hosting a web server. This comes with the Arduino core library.
+\item ESPm\+DNS.\+h. Required for hosting a web server. This comes with the Arduino core library.
+\item \href{https://github.com/marian-craciunescu/ESP32Ping}{\texttt{ ESP32\+Ping.\+h}} Used to verify IP addresses, specificlly the MQTT broker IP address.
+\item \href{https://github.com/theAgingApprentice/aaNetwork}{\texttt{ aa\+Network.\+h}} Required for Wifi connection.
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{Author}\label{index_autotoc_md10}
+Written by Old Squire for the Aging Apprentice.\hypertarget{index_autotoc_md11}{}\doxysubsection{Development environment}\label{index_autotoc_md11}
 This library was written using the following tools\+:
 \begin{DoxyItemize}
 \item \href{https://code.visualstudio.com/docs}{\texttt{ }} Microsoft\textquotesingle{}s Visual Studio Code source code editor.
 \item \href{https://platformio.org/}{\texttt{ }} Platform\+IO plugin \href{https://en.wikipedia.org/wiki/Embedded_software}{\texttt{ embedded software}} application \href{https://en.wikipedia.org/wiki/Integrated_development_environment}{\texttt{ IDE}}.
 \end{DoxyItemize}
 
-suggestion\+: If you are using the standard Arduino IDE for your project then you should probably avoid using this library unless you are comfortable navigating the subtle differences bewteen how your envoronment bahaves and how the environment used to create this library behaved.\hypertarget{index_autotoc_md23}{}\doxysubsection{Code documentation}\label{index_autotoc_md23}
-As part of our CI/\+CD software development process we use \href{https://docs.github.com/en/actions}{\texttt{ Github Actions}} to automatically generate up-\/to-\/date documentation via \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen}} every time the {\bfseries{main}} branch gets updated. The output from Doxygen is placed in the {\bfseries{root}} diretory of the {\bfseries{gh-\/pages}} branch. This repository has an associated \href{https://pages.github.com/}{\texttt{ Github Pages}} site that contains all of the Doxygen tags and assorted embedded comments from the code itself. This documentation can be viewed in your web browser \href{https://theagingapprentice.github.io/aaFormat/html/index.html}{\texttt{ here}}. ~\newline
-\hypertarget{index_autotoc_md24}{}\doxysubsection{Microprocessor compatibility}\label{index_autotoc_md24}
-This library has only been tested on the \href{https://learn.adafruit.com/adafruit-huzzah32-esp32-feather}{\texttt{ Adafruit Huzzah32}} development board containing the \href{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}{\texttt{ Espressif ESP WROOM32 SOC}} featuring a pair of \href{https://mirrobo.ru/wp-content/uploads/2016/11/Cadence_Tensillica_Xtensa_LX6_ds.pdf}{\texttt{ Cadence/\+Xtensa®32-\/bit LX6 microprocessors}}.\hypertarget{index_autotoc_md25}{}\doxysubsection{Installing}\label{index_autotoc_md25}
+suggestion\+: If you are using the standard Arduino IDE for your project then you should probably avoid using this library unless you are comfortable navigating the subtle differences bewteen how your envoronment bahaves and how the environment used to create this library behaved.\hypertarget{index_autotoc_md12}{}\doxysubsection{Code documentation}\label{index_autotoc_md12}
+As part of our CI/\+CD software development process we use \href{https://docs.github.com/en/actions}{\texttt{ Github Actions}} to automatically generate up-\/to-\/date documentation via \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen}} every time the {\bfseries{main}} branch gets updated. The output from Doxygen is placed in the {\bfseries{root}} diretory of the {\bfseries{gh-\/pages}} branch. This repository has an associated \href{https://pages.github.com/}{\texttt{ Github Pages}} site that contains all of the Doxygen tags and assorted embedded comments from the code itself. This documentation can be viewed in your web browser \href{https://theagingapprentice.github.io/aaWeb/html/index.html}{\texttt{ here}}. ~\newline
+\hypertarget{index_autotoc_md13}{}\doxysubsection{Microprocessor compatibility}\label{index_autotoc_md13}
+This library has only been tested on the \href{https://learn.adafruit.com/adafruit-huzzah32-esp32-feather}{\texttt{ Adafruit Huzzah32}} development board containing the \href{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}{\texttt{ Espressif ESP WROOM32 SOC}} featuring a pair of \href{https://mirrobo.ru/wp-content/uploads/2016/11/Cadence_Tensillica_Xtensa_LX6_ds.pdf}{\texttt{ Cadence/\+Xtensa®32-\/bit LX6 microprocessors}}.\hypertarget{index_autotoc_md14}{}\doxysubsection{Installing}\label{index_autotoc_md14}
 These instructions assume that you have \href{https://git-scm.com/}{\texttt{ Git}} installed on your computer.
 
 
 \begin{DoxyEnumerate}
 \item Navigate to the Arduino project directory on your computer.
-\item Issue the command {\ttfamily git clone \href{https://github.com/theAgingApprentice/{projectName.git}}{\texttt{ https\+://github.\+com/the\+Aging\+Apprentice/\{project\+Name.\+git\}}}}.
+\item Issue the command {\ttfamily git clone \href{https://github.com/theAgingApprentice/aaWeb.git}{\texttt{ https\+://github.\+com/the\+Aging\+Apprentice/aa\+Web.\+git}}\}}.
 \item Issue the command {\ttfamily git remote}. If you get back the response {\itshape origin} then you are all set. If you get a blank response back then you must set up an association to the remote repository by issuing the command {\ttfamily git remote add origin \href{https://github.com/theAgingApprentice/{projectName.git}}{\texttt{ https\+://github.\+com/the\+Aging\+Apprentice/\{project\+Name.\+git\}}}} to set up the remote.
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md26}{}\doxysubsection{Running tests}\label{index_autotoc_md26}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md15}{}\doxysubsection{Running tests}\label{index_autotoc_md15}
 As part of our CI/\+CD software development process we want to run automated tests every time new code is pushed to the main branch. To date we have not managed to do this though we have experimented with the Platform\+IO C/\+C++ unit testing tool called \href{https://github.com/ThrowTheSwitch/Unity}{\texttt{ unity}}. We have a dummy script called \href{test/test_main.cpp}{\texttt{ test\+\_\+main.\+cpp}} located located in the test directory off the root of the repository. This test does nothing useful at the moment and it may not even make sense to run tests on a class such as this. Full instructions on how to write and run these test can be found on the Platform\+IO website \href{https://docs.platformio.org/en/latest/tutorials/espressif32/arduino_debugging_unit_testing.html\#writing-unit-tests}{\texttt{ here}}. If you wish to run the tests you must do so manally while in Visual Studio Code and Platform\+IO\+:
 
 
@@ -66,14 +77,13 @@ The tests will then run and show you results like this.
 \end{DoxyCode}
 
 
-We are also looking at Platform\+IO\textquotesingle{}s support of \href{https://docs.platformio.org/en/latest/integration/ci/github-actions.html}{\texttt{ Github Actions}} to see what can be accomplished for Arduino projects. We do not want to pay to use Travis\+CI.\hypertarget{index_autotoc_md27}{}\doxysubsection{Releases}\label{index_autotoc_md27}
+We are also looking at Platform\+IO\textquotesingle{}s support of \href{https://docs.platformio.org/en/latest/integration/ci/github-actions.html}{\texttt{ Github Actions}} to see what can be accomplished for Arduino projects. We do not want to pay to use Travis\+CI.\hypertarget{index_autotoc_md16}{}\doxysubsection{Releases}\label{index_autotoc_md16}
 
 \begin{DoxyItemize}
 \item We use the \href{http://semver.org/}{\texttt{ Sem\+Ver}} numbering scheme for our releases.
-\item The latest stable release is \href{https://github.com/theAgingApprentice/aaFormat/releases/tag/v1.0.0}{\texttt{ v1.\+0.\+0}}. ~\newline
-
-\end{DoxyItemize}\hypertarget{index_autotoc_md28}{}\doxysubsection{Examples}\label{index_autotoc_md28}
-There is an \href{https://github.com/theAgingApprentice/aaFormat/blob/main/examples/simpleExample/simpleExample.cpp}{\texttt{ example sketch}} that shows you how to use this class.\hypertarget{index_autotoc_md29}{}\doxysubsection{Acknowledgements}\label{index_autotoc_md29}
+\item The latest stable release is \href{https://github.com/theAgingApprentice/aaWeb/releases/tag/v1.0.0}{\texttt{ v1.\+0.\+0}}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysubsection{Examples}\label{index_autotoc_md17}
+There is an \href{https://github.com/theAgingApprentice/aaWeb/blob/main/examples/simpleExample/simpleExample.cpp}{\texttt{ example sketch}} that shows you how to use this class.\hypertarget{index_autotoc_md18}{}\doxysubsection{Acknowledgements}\label{index_autotoc_md18}
 
 \begin{DoxyItemize}
 \item The many folks involved in porting the Arduino libraries over to the ESP32 SOC.
