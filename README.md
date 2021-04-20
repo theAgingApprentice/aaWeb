@@ -116,7 +116,7 @@ use TravisCI.
 
 ## Releases
 * We use the [SemVer](http://semver.org/) numbering scheme for our releases. 
-* The latest stable release is [v1.0.0](https://github.com/theAgingApprentice/aaWeb/releases/tag/v1.0.0).
+* The latest stable release is [v1.0.0](https://github.com/theAgingApprentice/aaWeb/releases/tag/V1.0.0).
 
 ## Examples
 There is an [example sketch](https://github.com/theAgingApprentice/aaWeb/blob/main/examples/simpleExample/simpleExample.cpp) that shows you how to use this class. 
