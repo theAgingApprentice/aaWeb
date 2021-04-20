@@ -15,7 +15,6 @@
 #include <WebServer.h> // Hosting an HTTP server on the ESP32. Comes with Platform.io.
 #include <ESPmDNS.h> // Redirecting of incoming cient requests. Comes with Platform.io.
 #include <ESP32Ping.h> // Verify IP addresses. https://github.com/marian-craciunescu/ESP32Ping
-#include <aaFormat.h> // Convert datatypes.
 
 /************************************************************************************
  * @section aaWebServiceVars Global variables.
@@ -26,8 +25,6 @@ static String _loginPage; // Login web page.
 static String _optionPage; // Option web page.
 static String _cfgPage; // Configuration web page.
 static String _otaPage; // Over The Air upload Page.
-static aaFormat _convert; // Assortment of handy conversion functions.
-const char* HOST_NAME_PREFIX = "Example"; // Prefix for our unique network name.
 
 /************************************************************************************
  * @class Read/write to/from flash RAM.
