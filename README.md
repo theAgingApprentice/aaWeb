@@ -30,7 +30,6 @@ that comes bundled with PlatformIO.
 * WebServer.h. Required for hosting a web server. This comes with the Arduino core library.
 * ESPmDNS.h. Required for hosting a web server. This comes with the Arduino core library.
 * <a href="https://github.com/marian-craciunescu/ESP32Ping">ESP32Ping.h</a> Used to verify IP addresses, specificlly the MQTT broker IP address. 
-* <a href="https://github.com/theAgingApprentice/aaFormat">aaFormat.h</a> Required for converting and formatting data types. 
 * <a href="https://github.com/theAgingApprentice/aaNetwork">aaNetwork.h</a> Required for Wifi connection. 
 
 ## Author
