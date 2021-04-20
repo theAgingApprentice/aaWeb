@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getbrokerip_2',['getBrokerIP',['../classaa_web.html#a2fc201ba7ce8a9058b63af6d9bb68787',1,'aaWeb']]]
+  ['evalsignal_9',['evalSignal',['../classaa_network.html#a8c5caf595e69a1ddb85495824d8e1813',1,'aaNetwork']]]
 ];

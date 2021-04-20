@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eaaweb_14',['~aaWeb',['../classaa_web.html#acdb7e128f73c7a38612b0df92891502f',1,'aaWeb']]]
+  ['jointwoconstchar_56',['joinTwoConstChar',['../classaa_format.html#a9bd278c97225bff5cc5cbd77e27eb8ca',1,'aaFormat']]]
 ];
